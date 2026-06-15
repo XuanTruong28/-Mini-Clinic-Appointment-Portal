@@ -28,10 +28,5 @@ Dự án này là bài tập thực hành Lab04. Ứng dụng mô phỏng hệ t
 
 **Bước 1:** Mở công cụ dòng lệnh (Terminal hoặc PowerShell) tại thư mục gốc của dự án.
 
-**Bước 2:** Chạy lệnh sinh file tự động nạp của Composer (Nếu đã có bỏ qua bước này)
-```bash
-composer dump-autoload
-
-
-**Bước 3:** Chạy dự án
+**Bước 2:** Chạy dự án
 php -S localhost:8000 -t public
