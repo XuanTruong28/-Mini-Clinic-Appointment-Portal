@@ -32,5 +32,6 @@ Dự án này là bài tập thực hành Lab04. Ứng dụng mô phỏng hệ t
 ```bash
 composer dump-autoload
 
+
 **Bước 3:** Chạy dự án
 php -S localhost:8000 -t public

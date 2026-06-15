@@ -1,0 +1,153 @@
+:root {
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --nav-bg: #0f172a;
+    --nav-text: #94a3b8;
+    --nav-active: #38bdf8;
+    --nav-active-bg: rgba(56, 189, 248, 0.1);
+    --bg-color: #f1f5f9;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+* { 
+    box-sizing: border-box; 
+    transition: all 0.25s ease-in-out; /* Hiệu ứng mượt mà cho mọi thay đổi */
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg-color); 
+    color: var(--text-main); 
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 16px 40px; 
+    background: var(--nav-bg); 
+    color: white; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar strong { font-size: 1.25rem; font-weight: 700; color: white; }
+
+.nav-links, .nav-auth { display: flex; gap: 8px; align-items: center; }
+
+.navbar a, .link-button { 
+    color: var(--nav-text); 
+    text-decoration: none; 
+    background: none; 
+    border: 0; 
+    cursor: pointer; 
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+/* Hiệu ứng nổi bật menu */
+.navbar a:hover, .link-button:hover { 
+    color: white; 
+    background: rgba(255, 255, 255, 0.05); 
+}
+
+.navbar a.active {
+    color: var(--nav-active);
+    background: var(--nav-active-bg);
+    font-weight: 600;
+}
+
+.login-btn, .logout-btn { background: rgba(255, 255, 255, 0.1); color: white !important;}
+.logout-btn:hover { background: #ef4444 !important; color: white; }
+
+/* Bố cục chính */
+.container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+h1, h2 { color: #0f172a; margin-top: 0; }
+h1 { font-size: 2rem; margin-bottom: 8px; }
+.container > p { color: var(--text-muted); margin-bottom: 32px; font-size: 1.1rem; }
+
+/* Style cho các khối Card (trang chủ & form) */
+.card { 
+    background: white; 
+    border: 1px solid var(--border-color); 
+    border-radius: 16px; 
+    padding: 32px; 
+    margin-bottom: 24px; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); 
+}
+
+/* Hiệu ứng nảy lên khi hover vào thẻ card ở trang chủ */
+.grid .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.grid h2 { font-size: 1.25rem; color: var(--primary); margin-bottom: 12px; }
+
+/* Form Elements */
+.form-group { margin-bottom: 20px; }
+label { display: block; font-weight: 600; margin-bottom: 8px; color: #475569; }
+input, select, textarea { 
+    width: 100%; 
+    padding: 12px 16px; 
+    border: 1.5px solid #cbd5e1; 
+    border-radius: 10px; 
+    font-size: 1rem; 
+    font-family: inherit;
+    color: var(--text-main);
+    background: #f8fafc;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+textarea { min-height: 140px; resize: vertical; }
+.error-text { color: #dc2626; font-size: 0.875rem; margin-top: 6px; font-weight: 500; }
+
+/* Thông báo Flash Message */
+.alert { padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; font-weight: 600; display: flex; align-items: center; }
+.alert.success { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.alert.error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+/* Buttons */
+.btn { 
+    padding: 12px 24px; 
+    border: 0; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    font-size: 1rem;
+    text-decoration: none; 
+    display: inline-block; 
+    text-align: center;
+}
+.btn.primary { background: var(--primary); color: white; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25); }
+.btn.primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3); }
+.btn.secondary { background: #e2e8f0; color: #475569; }
+.btn.secondary:hover { background: #cbd5e1; color: #1e293b; }
+
+/* Table */
+.table { width: 100%; border-collapse: separate; border-spacing: 0; background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
+.table th, .table td { padding: 16px; text-align: left; border-bottom: 1px solid var(--border-color); }
+.table th { background: #f8fafc; font-weight: 600; color: #475569; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+.table tbody tr:last-child td { border-bottom: none; }
+.table tbody tr:hover { background: #f1f5f9; }
+
+.honeypot { display: none; }
+.inline-form { display: inline; margin: 0; }
